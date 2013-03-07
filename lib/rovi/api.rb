@@ -21,9 +21,7 @@ module Rovi
       options = self.class.default_options.dup.merge!({
         query: params
       })
-
       path = build_path(category, method)
-      request = Request.new(Net::HTTP::Get, path, options )
 
       response = self.class.get(path, options)
       response.parsed_response
